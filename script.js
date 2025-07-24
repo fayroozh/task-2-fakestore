@@ -2,7 +2,7 @@
 document.addEventListener('DOMContentLoaded', () => {
   const container = document.getElementById("products-container");
 
-  // عرض حالة التحميل مع هياكل عظمية للمنتجات
+  // عرض مؤشر التحميل
   container.innerHTML = `
     <div class="col-span-full">
       ${Array(8).fill().map((_, i) => `
@@ -11,7 +11,7 @@ document.addEventListener('DOMContentLoaded', () => {
     </div>
   `;
 
-  // تأثير ظهور تدريجي للصفحة
+  // تأثير الظهور التدريجي
   document.body.style.opacity = '0';
   setTimeout(() => {
     document.body.style.opacity = '1';
@@ -20,10 +20,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
   // جلب المنتجات من API
   fetch("https://fakestoreapi.com/products")
-    .then((res) => {
-      if (!res.ok) throw new Error('Network response was not ok');
-      return res.json();
-    })
+    .then((res) => res.json())
     .then((products) => {
       if (products.length === 0) {
         container.innerHTML = `<p class="col-span-full text-center py-8 text-gray-500">No products available</p>`;
