@@ -1,0 +1,24 @@
+{
+  "name": "task-2",
+  "version": "1.0.0",
+  "main": "add-script.js",
+  "dependencies": {
+    "tailwindcss": "^4.1.11"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/fayroozh/task-2-fakestore.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/fayroozh/task-2-fakestore/issues"
+  },
+  "homepage": "https://github.com/fayroozh/task-2-fakestore#readme",
+  "description": ""
+}
