@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="FakeStore - Browse and add products">
+  <meta name="theme-color" content="#ffffff">
+  <title>Add Product - FakeStore</title>
+  <script defer src="add-script.js"></script>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <style>
+    .input-field {
+      transition: all 0.3s ease;
+      border: 2px solid #e2e8f0;
+      background-color: #f8fafc;
+    }
+    
+    .input-field:focus {
+      border-color: #3b82f6;
+      box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.2);
+      background-color: white;
+    }
+    
+    .input-field:hover {
+      border-color: #93c5fd;
+    }
+    
+    .submit-btn {
+      transition: all 0.3s ease;
+      background: linear-gradient(to right, #4f46e5, #7c3aed);
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    }
+    
+    .submit-btn:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 6px 8px rgba(0, 0, 0, 0.15);
+    }
+    
+    .submit-btn:active {
+      transform: translateY(1px);
+    }
+
+    /* تحسين التجاوب مع الشاشات المختلفة */
+    @media (max-width: 640px) {
+      .container {
+        padding: 0.5rem;
+      }
+      
+      form {
+        padding: 1rem;
+      }
+    }
+  </style>
+</head>
+
+<body class="bg-gray-100 text-gray-800">
+
+  <header class="bg-white shadow p-4">
+    <div class="container mx-auto flex justify-between items-center">
+      <h1 class="text-2xl font-bold text-indigo-700">إضافة منتج جديد</h1>
+      <a href="index.html" class="text-blue-600 hover:underline flex items-center">
+        <span>العودة إلى المنتجات</span>
+        <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 mr-1" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 19l-7-7m0 0l7-7m-7 7h18" />
+        </svg>
+      </a>
+    </div>
+  </header>
+
+  <main class="container mx-auto p-4">
+    <form id="product-form" class="bg-white p-6 rounded-xl shadow-lg max-w-xl mx-auto space-y-6">
+      <div>
+        <label class="block font-semibold mb-2 text-gray-700">عنوان المنتج</label>
+        <input type="text" name="title" required class="input-field w-full p-3 rounded-lg" placeholder="أدخل اسم المنتج" />
+      </div>
+
+      <div>
+        <label class="block font-semibold mb-2 text-gray-700">السعر ($)</label>
+        <input type="number" name="price" step="0.01" required class="input-field w-full p-3 rounded-lg" placeholder="0.00" />
+      </div>
+
+      <div>
+        <label class="block font-semibold mb-2 text-gray-700">الوصف</label>
+        <textarea name="description" rows="3" required class="input-field w-full p-3 rounded-lg" placeholder="أدخل وصفاً تفصيلياً للمنتج"></textarea>
+      </div>
+
+      <div>
+        <label class="block font-semibold mb-2 text-gray-700">الفئة</label>
+        <select name="category" required class="input-field w-full p-3 rounded-lg">
+          <option value="">اختر فئة</option>
+          <option value="electronics">إلكترونيات</option>
+          <option value="jewelery">مجوهرات</option>
+          <option value="men's clothing">ملابس رجالية</option>
+          <option value="women's clothing">ملابس نسائية</option>
+        </select>
+      </div>
+
+      <div>
+        <label class="block font-semibold mb-2 text-gray-700">رابط الصورة</label>
+        <input type="url" name="image" required class="input-field w-full p-3 rounded-lg" placeholder="https://example.com/image.jpg" />
+      </div>
+
+      <div class="flex justify-center pt-4">
+        <button type="submit" class="submit-btn text-white px-6 py-3 rounded-lg font-bold text-lg w-full sm:w-auto">
+          إضافة المنتج
+        </button>
+      </div>
+      
+      <div id="status-message" class="hidden mt-4 p-4 rounded-lg text-center"></div>
+    </form>
+  </main>
+
+</body>
+
+</html>
